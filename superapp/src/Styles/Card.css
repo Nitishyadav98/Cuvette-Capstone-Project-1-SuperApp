@@ -1,0 +1,15 @@
+.card{
+    padding: 3px;
+    width: 200px;
+    height: 200px;
+    border-radius: 6px;
+}
+
+.heading{
+    color: white;
+}
+
+.imgcontainer{
+    height: 118px;
+    width: 180px;
+}

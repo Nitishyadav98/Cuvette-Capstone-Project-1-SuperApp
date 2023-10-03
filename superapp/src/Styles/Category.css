@@ -1,0 +1,23 @@
+.categorypage{
+    display: flex;
+    height: 100vh;
+    background-color: black;
+}
+
+.heading{
+    color: white;
+}
+
+.subheading{
+    color: white;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.warning{
+    color: red;
+}
+
