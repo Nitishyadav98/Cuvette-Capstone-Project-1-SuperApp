@@ -1,16 +1,21 @@
 import React from 'react'
+import '../Styles/Profile.css'
 
 const Profile = () => {
+
+    const profileDetails = JSON.parse(localStorage.getItem('profileDetails'))
+    const categories = JSON.parse(localStorage.getItem('categories'))
+
   return (
-    <div>
+    <div className='profilePage'>
         <div className='profileSection'>
             <div className='profileCard'>
-                <div>Image</div>
+                <div className='image'></div>
                 <div className='profileDetails'>
-                    <div>Name</div>
-                    <div>Email</div>
-                    <div>Username</div>
-                    <div>Categories</div>
+                    <div>{profileDetails.name}</div>
+                    <div>{profileDetails.email}</div>
+                    <div>{profileDetails.username}</div>
+                    <div>{categories.map((el=>(<span>{el}</span>)))}</div>
                 </div>
             </div>
             <div className='weatherSection'>
