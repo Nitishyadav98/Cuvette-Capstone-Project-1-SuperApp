@@ -38,14 +38,13 @@ const Registration = () =>{
             setFormValid((prev)=>({...prev, mobile : false}))
         }
         if(formValid.name && formValid.username && formValid.email && formValid.mobile){
-            console.log(formValid.name)
-            console.log(formDetails)
-            setFormDetails((prev)=>({
+            localStorage.setItem('profileDetails', JSON.stringify(formDetails) )
+            setFormDetails({
                 name: "",
                 username: "",
                 email: "",
                 mobile: ""
-            }))
+            })
             navigate('/category')
         }
     }

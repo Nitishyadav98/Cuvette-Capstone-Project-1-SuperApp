@@ -11,6 +11,7 @@ const Category = () =>{
 
     const nextPageHandler =()=>{
         if(selectedCategories.length >= 3){
+            localStorage.setItem('categories', JSON.stringify(selectedCategories))
             navigate('/profile')
         }
     }
