@@ -1,7 +1,10 @@
 import '../Styles/Registration.css'
 import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 
 const Registration = () =>{
+
+    const navigate = useNavigate()
 
     const [formValid, setFormValid] = useState({
         name: true,
@@ -21,7 +24,9 @@ const Registration = () =>{
     const submitHandler =(e)=>{
         e.preventDefault()
         if(formDetails.name.trim() === ""){
+            console.log(formDetails.name)
             setFormValid((prev)=>({...prev, name : false}))
+            console.log(formValid.name)
         }
         if(formDetails.username.trim() === ""){
             setFormValid((prev)=>({...prev, username : false}))
@@ -32,13 +37,17 @@ const Registration = () =>{
         if(formDetails.mobile.trim() === "" || !formDetails.mobile.trim().length === 10){
             setFormValid((prev)=>({...prev, mobile : false}))
         }
-        console.log(formDetails)
-        setFormDetails((prev)=>({
-            name: "",
-            username: "",
-            email: "",
-            mobile: ""
-        }))
+        if(formValid.name && formValid.username && formValid.email && formValid.mobile){
+            console.log(formValid.name)
+            console.log(formDetails)
+            setFormDetails((prev)=>({
+                name: "",
+                username: "",
+                email: "",
+                mobile: ""
+            }))
+            navigate('/category')
+        }
     }
 
     return(<div className="registration">

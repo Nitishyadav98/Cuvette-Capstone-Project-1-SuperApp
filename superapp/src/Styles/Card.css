@@ -1,15 +1,21 @@
 .card{
+    margin: 5px;
     padding: 3px;
     width: 200px;
-    height: 200px;
+    height: 180px;
     border-radius: 6px;
+}
+
+.clicked{
+    border: 3px solid green;
 }
 
 .heading{
     color: white;
+    margin-bottom: 15px;
 }
 
 .imgcontainer{
-    height: 118px;
-    width: 180px;
+    height: 100px;
+    width: 120px;
 }

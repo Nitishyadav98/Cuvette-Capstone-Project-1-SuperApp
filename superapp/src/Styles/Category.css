@@ -1,7 +1,10 @@
-.categorypage{
-    display: flex;
+.categorypagelayout{
     height: 100vh;
     background-color: black;
+}
+
+.categorypage{
+    display: flex;
 }
 
 .heading{
@@ -14,10 +17,27 @@
 
 .cards{
     display: flex;
+    margin: 5px;
     flex-wrap: wrap;
 }
 
 .warning{
     color: red;
+}
+
+.categorycontainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+}
+
+.selectedcategory{
+    text-align: center;
+    color: white;
+    width: 70px;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 10px;
+    background-color: green;
 }
 
