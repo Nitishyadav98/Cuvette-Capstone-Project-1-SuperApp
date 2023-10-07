@@ -30,8 +30,16 @@ const Profile = () => {
     },[])
 
     // useEffect(()=>{
-    //     console.log(article)
+    //     console.log(weather)
     // },[weather])
+
+    const dateAndTime = (data)=>{
+        const dtAndTmArr = data.split(' ')       
+        const date = dtAndTmArr[0]
+        const time = dtAndTmArr[1].slice(0, 2) > 12 ? `${dtAndTmArr[1].slice(0,2)-12} : ${dtAndTmArr[1].slice(2)}` : dtAndTmArr[1]
+        console.log(time)
+        return date.concat("  ", time)
+    }
     
     return (
     <div className='profilePage'>
@@ -46,7 +54,7 @@ const Profile = () => {
                 </div>
             </div>
             <div className='weatherSection'>
-                <div className='dateandtime'>date and time</div>
+                <div className='dateandtime'>{weather && dateAndTime(weather.last_updated)}</div>
                 <div className='weatherdetails'>
                     <div>
                         <div><img src={weather && weather.condition.icon}/></div>
@@ -64,7 +72,12 @@ const Profile = () => {
             </div>
         </div>
         <div className='newsSection'>
-            <div>Newspaper</div>
+            <div>{article && article.urlToImage}</div>
+            <div>
+                <div>{article && article.title}</div>
+                <div>{article && article.publishedAt}</div>
+            </div>
+            <div>{article && article.content}</div>
         </div>
     </div>
   )
